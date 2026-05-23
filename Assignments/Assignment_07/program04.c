@@ -1,0 +1,42 @@
+// Write a program to find odd factorial of given number
+
+#include<stdio.h>
+
+int OddFactorial(int iNo)
+{
+    if(iNo < 0)
+    {
+        iNo = -iNo;
+    }
+    
+    int iCnt = 0;
+    int iOddFact = 1;
+
+    for(iCnt = 1; iCnt <= iNo; iCnt++)
+    {
+        if(iCnt % 2 != 0)
+        {
+            iOddFact = iOddFact * iCnt;
+        }
+    }
+
+    return iOddFact;
+}
+
+int main()
+{
+    int iValue = 0;
+    int iRet = 0;
+
+    printf("Enter Number : ");
+    scanf("%d",&iValue);
+
+    iRet = OddFactorial(iValue);
+
+    printf("Odd Factorial of number is %d",iRet);
+
+    return 0;
+}
+
+// Time Complexity : O(N)
+// Space Complexity : O(1)  
